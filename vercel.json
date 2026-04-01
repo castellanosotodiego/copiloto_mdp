@@ -1,0 +1,14 @@
+{
+  "rewrites": [
+    { "source": "/brands/copiloto-mdp", "destination": "/brands/copiloto-mdp/index.html" },
+    { "source": "/", "destination": "/brands/copiloto-mdp/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=3600" }
+      ]
+    }
+  ]
+}

@@ -102,8 +102,8 @@
 
       <div class="stat-grid">
         <div class="stat-card">
-          <span class="stat-card__number" style="font-size: clamp(2.8rem, 5vw, 4.2rem);" data-target="1">1</span>
-          <p class="stat-card__label">respuesta incorrecta sobre beneficios premium puede costar más que toda la inversión del piloto</p>
+          <span class="stat-card__number" data-target="0">0</span>
+          <p class="stat-card__label">registro de qué información comunicó cada ejecutivo a cada cliente — hoy no existe forma de saberlo</p>
         </div>
         <div class="stat-card">
           <span class="stat-card__number" data-target="1h+">1h+</span>
@@ -115,10 +115,6 @@
         </div>
       </div>
 
-      <div class="quote-block">
-        <p>"Es grave entregar una información errada."</p>
-        <cite>— Paula, Canal RED Manager · Sesión de validación, Marzo 2026</cite>
-      </div>
     </div>
   </section>
 
@@ -240,42 +236,61 @@
         Tres razones por las que<br>un banco puede usar esto hoy.
       </h2>
 
-      <div class="pillar-grid" style="grid-template-columns: repeat(3, 1fr);">
-        <div class="pillar-card">
-          <div class="pillar-card__icon">🛡️</div>
+      <div class="pillar-grid" style="grid-template-columns: repeat(3, 1fr); align-items: stretch;">
+        <div class="pillar-card" style="display:flex; flex-direction:column;">
+          <div class="pillar-card__icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14 3L4 7v8c0 5.5 4.3 10.7 10 12 5.7-1.3 10-6.5 10-12V7L14 3z" stroke="#C0552E" stroke-width="1.5" stroke-linejoin="round"/>
+              <path d="M9 14l3 3 7-7" stroke="#C0552E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
           <h3 class="pillar-card__title">Cada respuesta queda registrada.</h3>
           <p class="pillar-card__body">
             Timestamp, usuario, pregunta, respuesta. Trazabilidad completa de cada interacción —
             no como promesa, como infraestructura ya operativa.
             Si alguien entrega información incorrecta, se sabe cuándo, a quién y qué decía.
           </p>
-          <span class="pillar-card__tag">Auditabilidad operativa desde el día 1.</span>
+          <span class="pillar-card__tag" style="margin-top:auto;">Auditabilidad operativa desde el día 1.</span>
         </div>
 
-        <div class="pillar-card">
-          <div class="pillar-card__icon">⚡</div>
+        <div class="pillar-card" style="display:flex; flex-direction:column;">
+          <div class="pillar-card__icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 3L6 16h8l-2 9 12-13h-8l2-9z" stroke="#C0552E" stroke-width="1.5" stroke-linejoin="round"/>
+            </svg>
+          </div>
           <h3 class="pillar-card__title">Si no sabe, lo dice.</h3>
           <p class="pillar-card__body">
             El sistema no inventa. Cuando una pregunta está fuera del alcance del índice,
             el bot lo señala explícitamente y sugiere escalar.
             No da respuestas incompletas como si fueran completas — ese es el riesgo real que se evita.
           </p>
-          <span class="pillar-card__tag">Fallback con honestidad, no con alucinación.</span>
+          <span class="pillar-card__tag" style="margin-top:auto;">Fallback con honestidad, no con alucinación.</span>
         </div>
-        <div class="pillar-card">
-          <div class="pillar-card__icon">🔄</div>
+        <div class="pillar-card" style="display:flex; flex-direction:column;">
+          <div class="pillar-card__icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 14c0-5.5 4.5-10 10-10 3 0 5.7 1.3 7.5 3.3" stroke="#C0552E" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M24 14c0 5.5-4.5 10-10 10-3 0-5.7-1.3-7.5-3.3" stroke="#C0552E" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M19 4l2.5 3.3L18 9" stroke="#C0552E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M9 24l-2.5-3.3L10 19" stroke="#C0552E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
           <h3 class="pillar-card__title">Se actualiza en horas, no en semanas.</h3>
           <p class="pillar-card__body">
             Cuando cambia un plan, una campaña o un beneficio, la base de conocimiento
             se corrige el mismo día. No hay que esperar una nueva capacitación ni
             reimprimir un termolaminado.
           </p>
-          <span class="pillar-card__tag">Información vigente. Siempre.</span>
+          <span class="pillar-card__tag" style="margin-top:auto;">Información vigente. Siempre.</span>
         </div>
       </div>
 
-      <div class="deco-line--full" style="margin-top: 2.5rem; margin-bottom: 1.5rem;"></div>
-      <p style="font-family: var(--font-serif); font-style: italic; font-size: 1rem; color: var(--border);">
+      <div class="quote-block" style="margin-top: 2.5rem;">
+        <p>"Es grave entregar una información errada."</p>
+        <cite>— Paula, Canal RED Manager · Sesión de validación, Marzo 2026</cite>
+      </div>
+      <p style="font-family: var(--font-serif); font-style: italic; font-size: 0.95rem; color: var(--border); margin-top: 1.2rem;">
         No es perfecto. Pero es gobernable, y eso es lo que permite mejorarlo con confianza.
       </p>
     </div>
@@ -348,7 +363,7 @@
           </div>
           <div class="criteria-item">
             <span class="criteria-item__check">✓</span>
-            <p class="criteria-item__text">Las respuestas son correctas según criterio de Paula.</p>
+            <p class="criteria-item__text">Las respuestas son consistentes con la información oficial del canal.</p>
           </div>
           <div class="criteria-item">
             <span class="criteria-item__check">✓</span>
@@ -368,8 +383,8 @@
   <section class="section section--dark" id="section-close" style="min-height: 60vh;">
     <div class="section__inner" style="text-align: center;">
       <p class="close-tagline">
-        La diferencia entre saber y creer<br>
-        <em>vale más que cualquier herramienta.</em>
+        El conocimiento ya existe.<br>
+        <em>Ahora está donde se necesita.</em>
       </p>
       <div class="deco-line" style="margin: 2rem auto; width:60px;"></div>
       <p class="close-meta">Copiloto SMART+ &nbsp;·&nbsp; MDP &nbsp;·&nbsp; Banco Santander Chile</p>

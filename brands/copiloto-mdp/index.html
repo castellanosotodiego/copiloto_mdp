@@ -24,8 +24,7 @@
       <img src="assets/logo-waib.svg" alt="WAIB" class="hero__logo">
       <div class="hero__line"></div>
       <p class="hero__tagline">Problem first.</p>
-      <p class="hero__meta">Canal RED &nbsp;·&nbsp; MDP &nbsp;·&nbsp; Banco Santander Chile</p>
-    </div>
+          </div>
 
     <div class="scroll-hint">
       <span class="scroll-hint__label">Scroll</span>
@@ -103,8 +102,8 @@
 
       <div class="stat-grid">
         <div class="stat-card">
-          <span class="stat-card__number" data-target="~60">~60</span>
-          <p class="stat-card__label">ejecutivos en canal RED que operan hoy sin fuente de consulta centralizada</p>
+          <span class="stat-card__number" style="font-size: clamp(2.8rem, 5vw, 4.2rem);" data-target="1">1</span>
+          <p class="stat-card__label">respuesta incorrecta sobre beneficios premium puede costar más que toda la inversión del piloto</p>
         </div>
         <div class="stat-card">
           <span class="stat-card__number" data-target="1h+">1h+</span>
@@ -219,7 +218,10 @@
               <span class="teams-mockup__title">Microsoft Teams — Copiloto SMART+</span>
             </div>
             <div class="teams-mockup__screen">
-              <img src="assets/teams-screenshot.png" alt="Copiloto SMART+ en Teams" loading="lazy">
+              <a href="https://teams.microsoft.com" target="_blank" style="display:block;position:relative;cursor:pointer;">
+                <img src="assets/teams-screenshot.png" alt="Copiloto SMART+ en Teams" loading="lazy" style="cursor:pointer;">
+                <div style="position:absolute;bottom:14px;right:14px;background:rgba(192,85,46,0.92);color:#fff;font-family:system-ui;font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.4rem 0.8rem;border-radius:3px;pointer-events:none;">Abrir Teams →</div>
+              </a>
             </div>
           </div>
         </div>
@@ -235,10 +237,10 @@
     <div class="section__inner">
       <p class="eyebrow">Gobernanza</p>
       <h2 class="headline gov-intro">
-        Dos razones por las que<br>un banco puede usar esto hoy.
+        Tres razones por las que<br>un banco puede usar esto hoy.
       </h2>
 
-      <div class="pillar-grid">
+      <div class="pillar-grid" style="grid-template-columns: repeat(3, 1fr);">
         <div class="pillar-card">
           <div class="pillar-card__icon">🛡️</div>
           <h3 class="pillar-card__title">Cada respuesta queda registrada.</h3>
@@ -260,6 +262,16 @@
           </p>
           <span class="pillar-card__tag">Fallback con honestidad, no con alucinación.</span>
         </div>
+        <div class="pillar-card">
+          <div class="pillar-card__icon">🔄</div>
+          <h3 class="pillar-card__title">Se actualiza en horas, no en semanas.</h3>
+          <p class="pillar-card__body">
+            Cuando cambia un plan, una campaña o un beneficio, la base de conocimiento
+            se corrige el mismo día. No hay que esperar una nueva capacitación ni
+            reimprimir un termolaminado.
+          </p>
+          <span class="pillar-card__tag">Información vigente. Siempre.</span>
+        </div>
       </div>
 
       <div class="deco-line--full" style="margin-top: 2.5rem; margin-bottom: 1.5rem;"></div>
@@ -276,14 +288,14 @@
     <div class="section__inner">
       <p class="eyebrow">La propuesta</p>
       <h2 class="headline" style="margin-bottom: 2.5rem;">
-        Un experimento barato,<br>acotado y reversible.
+        Un piloto de bajo riesgo.<br>Alta evidencia. Decisión en 30 días.
       </h2>
 
       <div class="experiment-grid">
         <div class="exp-card">
           <span class="exp-card__num" data-target="10">10</span>
           <p class="exp-card__unit">ejecutivos</p>
-          <p class="exp-card__desc">Canal RED seleccionados por Paula o Javi. No toda la organización — un grupo controlado.</p>
+          <p class="exp-card__desc">Un grupo controlado del canal RED. No toda la organización — la escala correcta para generar evidencia real.</p>
         </div>
         <div class="exp-card">
           <span class="exp-card__num" data-target="30">30</span>
@@ -356,10 +368,11 @@
   <section class="section section--dark" id="section-close" style="min-height: 60vh;">
     <div class="section__inner" style="text-align: center;">
       <p class="close-tagline">
-        Menos fricción para responder.<br>
-        <em>Más seguridad para vender.</em>
+        La diferencia entre saber y creer<br>
+        <em>vale más que cualquier herramienta.</em>
       </p>
-      <p class="close-meta">Copiloto SMART+ &nbsp;·&nbsp; Canal RED &nbsp;·&nbsp; Banco Santander Chile</p>
+      <div class="deco-line" style="margin: 2rem auto; width:60px;"></div>
+      <p class="close-meta">Copiloto SMART+ &nbsp;·&nbsp; MDP &nbsp;·&nbsp; Banco Santander Chile</p>
     </div>
   </section>
 

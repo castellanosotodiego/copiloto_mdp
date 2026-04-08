@@ -23,7 +23,7 @@
     <div class="hero__logo-wrap">
       <img src="assets/logo-waib.svg" alt="WAIB" class="hero__logo">
       <div class="hero__line"></div>
-      <p class="hero__tagline">Problem first.</p>
+      <p class="hero__tagline">First, the problem.</p>
           </div>
 
     <div class="scroll-hint">
@@ -214,7 +214,7 @@
               <span class="teams-mockup__title">Microsoft Teams — Copiloto SMART+</span>
             </div>
             <div class="teams-mockup__screen">
-              <a href="https://teams.microsoft.com" target="_blank" style="display:block;position:relative;cursor:pointer;">
+              <a href="msteams://" id="teams-link">
                 <img src="assets/teams-screenshot.png" alt="Copiloto SMART+ en Teams" loading="lazy" style="cursor:pointer;">
                 <div style="position:absolute;bottom:14px;right:14px;background:rgba(192,85,46,0.92);color:#fff;font-family:system-ui;font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.4rem 0.8rem;border-radius:3px;pointer-events:none;">Abrir Teams →</div>
               </a>
@@ -396,5 +396,16 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="js/main.js"></script>
 
+
+  <script>
+    var tl = document.getElementById('teams-link');
+    if(tl) tl.addEventListener('click', function(e){
+      e.preventDefault();
+      var f = document.createElement('iframe');
+      f.style.display='none'; document.body.appendChild(f);
+      f.src='msteams://';
+      setTimeout(function(){ document.body.removeChild(f); window.open('https://teams.microsoft.com','_blank'); }, 1500);
+    });
+  </script>
 </body>
 </html>

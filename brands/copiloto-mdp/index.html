@@ -396,5 +396,21 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="js/main.js"></script>
 
+
+  <script>
+    // Fix stat display — override counter for +60 and 100%
+    document.addEventListener('DOMContentLoaded', function() {
+      // Find stat numbers and fix their display
+      var stats = document.querySelectorAll('.stat-card__number');
+      stats.forEach(function(el) {
+        var target = el.dataset.target;
+        if (target === '60') {
+          el.innerHTML = '<span style="font-size:0.75em">+</span>60';
+        } else if (target === '100') {
+          el.innerHTML = '100<span style="font-size:0.65em">%</span>';
+        }
+      });
+    });
+  </script>
 </body>
 </html>

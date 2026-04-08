@@ -53,6 +53,8 @@ function animateCounter(el, targetStr, duration = 1600) {
   let prefix = '', suffix = '', numStr = raw;
 
   if (raw.startsWith('~')) { prefix = '~'; numStr = raw.slice(1); }
+  if (raw.startsWith('+')) { prefix = '+'; numStr = raw.slice(1); }
+  if (numStr.endsWith('%')) { suffix = '%'; numStr = numStr.slice(0, -1); }
   if (numStr.endsWith('+')) { suffix = '+'; numStr = numStr.slice(0, -1); }
   if (numStr.endsWith('h')) { suffix = 'h' + suffix; numStr = numStr.slice(0, -1); }
 

@@ -62,16 +62,18 @@
 .hero__logo {
   width: clamp(160px, 22vw, 260px);
   opacity: 0;
-  transform: translateY(12px);
+  transform: translateY(16px) scale(0.95);
+  filter: blur(4px);
 }
 
 .hero__line {
-  width: 0;
+  width: 120px;
   height: 3px;
   background: var(--terra);
   margin: 2.4rem auto;
-  transition: none;
-  box-shadow: 0 0 12px rgba(192, 85, 46, 0.4);
+  transform: scaleX(0);
+  transform-origin: center;
+  box-shadow: 0 0 14px rgba(192, 85, 46, 0.45);
 }
 
 .hero__tagline {
@@ -80,9 +82,15 @@
   font-weight: 400;
   color: var(--bg-dark);
   letter-spacing: 0.02em;
-  opacity: 0;
-  transform: translateY(8px);
   white-space: nowrap;
+}
+
+/* Word spans injected by JS for stagger animation */
+.hero__word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(18px);
+  will-change: transform, opacity;
 }
 
 .hero__meta {

@@ -10,21 +10,47 @@ window.addEventListener('scroll', () => {
 
 // ── HERO ENTRANCE ─────────────────────────────────────────────────
 function initHero() {
+  // Split tagline into word spans for stagger
+  const tagline = document.querySelector('.hero__tagline');
+  if (tagline) {
+    tagline.innerHTML = tagline.textContent.trim().split(' ')
+      .map(w => `<span class="hero__word">${w}</span>`).join(' ');
+  }
+
   const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-  tl.to('.hero__logo', { opacity: 1, y: 0, duration: 1.1, delay: 0.3 })
-    .to('.hero__line', { width: '120px', duration: 0.7, ease: 'power2.inOut' }, '-=0.3')
-    .to('.hero__tagline', { opacity: 1, y: 0, duration: 0.8 }, '-=0.3')
-    .to('.hero__meta', { opacity: 1, duration: 0.6 }, '-=0.3')
-    .to('.scroll-hint', { opacity: 0.5, duration: 0.5 }, '-=0.2');
+
+  // 1 — Logo materialises: desblur + rise + scale
+  tl.to('.hero__logo', {
+      opacity: 1, y: 0, scale: 1, filter: 'blur(0px)',
+      duration: 1.3, delay: 0.5, ease: 'power2.out',
+    })
+    // 2 — Line grows from center
+    .to('.hero__line', {
+      scaleX: 1, duration: 0.9, ease: 'power2.inOut',
+    }, '-=0.5')
+    // 3 — Words drop in with stagger
+    .to('.hero__word', {
+      opacity: 1, y: 0, duration: 0.55, stagger: 0.1, ease: 'power2.out',
+    }, '-=0.4')
+    // 4 — Scroll hint appears
+    .to('.scroll-hint', { opacity: 0.45, duration: 0.6 }, '-=0.1');
+
+  // Subtle continuous breath on the line (barely perceptible)
+  gsap.to('.hero__line', {
+    scaleX: 1.1,
+    duration: 3,
+    ease: 'sine.inOut',
+    repeat: -1,
+    yoyo: true,
+    delay: 2.8,
+  });
 
   // Fade out scroll hint on first scroll
   const scrollHint = document.querySelector('.scroll-hint');
   if (scrollHint) {
-    const hideHint = () => {
+    window.addEventListener('scroll', () => {
       gsap.to(scrollHint, { opacity: 0, duration: 0.4, onComplete: () => scrollHint.remove() });
-      window.removeEventListener('scroll', hideHint);
-    };
-    window.addEventListener('scroll', hideHint, { passive: true, once: true });
+    }, { passive: true, once: true });
   }
 }
 

@@ -102,11 +102,11 @@
 
       <div class="stat-grid">
         <div class="stat-card">
-          <span class="stat-card__number" data-target="60">+60</span>
+          <span class="stat-card__number" data-target="+60">+60</span>
           <p class="stat-card__label">ejecutivos del canal RED respondiendo cada día sin una fuente de información centralizada</p>
         </div>
         <div class="stat-card">
-          <span class="stat-card__number" style="font-size:clamp(2.2rem,4vw,3.8rem); padding-top:0.4rem;" data-target="100">100%</span>
+          <span class="stat-card__number" style="font-size:clamp(2.2rem,4vw,3.8rem); padding-top:0.4rem;" data-target="100%">100%</span>
           <p class="stat-card__label">de las consultas de rutina escalan a supervisores — validado en sesión real con el equipo</p>
         </div>
         <div class="stat-card">
@@ -396,21 +396,5 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="js/main.js"></script>
 
-
-  <script>
-    // Fix stat display — override counter for +60 and 100%
-    document.addEventListener('DOMContentLoaded', function() {
-      // Find stat numbers and fix their display
-      var stats = document.querySelectorAll('.stat-card__number');
-      stats.forEach(function(el) {
-        var target = el.dataset.target;
-        if (target === '60') {
-          el.innerHTML = '<span style="font-size:0.75em">+</span>60';
-        } else if (target === '100') {
-          el.innerHTML = '100<span style="font-size:0.65em">%</span>';
-        }
-      });
-    });
-  </script>
 </body>
 </html>

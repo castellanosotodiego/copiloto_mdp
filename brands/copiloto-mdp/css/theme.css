@@ -200,21 +200,64 @@
   margin-bottom: 0.5rem;
 }
 
-/* Section 8 — Close tagline */
+/* Section 7 — Experiment */
+.experiment-headline { margin-bottom: 2.5rem; }
+.experiment-quote { margin-top: 2rem; }
+
+/* Section 6 — Governance extras */
+.gov-quote { margin-top: 2.5rem; }
+.gov-disclaimer {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--border);
+  margin-top: 1.2rem;
+}
+
+/* Section 8 — Decision extras */
+#section-decision {
+  min-height: 100vh;
+  display: flex;
+}
+.decision-split { width: 100%; }
+.decision-eyebrow { margin-bottom: 1.5rem; }
+.decision-conditions-label {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: rgba(26, 22, 18, 0.65);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Section 9 — Close */
+#section-close { min-height: 60vh; }
+.close-inner { text-align: center; }
 .close-tagline {
   font-family: var(--font-serif);
   font-size: clamp(1.8rem, 3.5vw, 3rem);
-  line-height: 1.3;
+  line-height: 1.4;
   color: var(--cream);
 }
 .close-tagline em { color: var(--terra); font-style: normal; }
+.close-line { display: block; }
+.close-accent {
+  width: 80px;
+  height: 3px;
+  background: var(--terra);
+  margin: 2.2rem auto;
+  transform: scaleX(0);
+  transform-origin: center;
+  box-shadow: 0 0 14px rgba(192, 85, 46, 0.45);
+}
 .close-meta {
   font-family: var(--font-sans);
   font-size: 0.8rem;
   color: var(--muted);
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  margin-top: 2rem;
+  margin-top: 0;
 }
 
 @media (max-width: 900px) {

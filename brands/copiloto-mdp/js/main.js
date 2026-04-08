@@ -112,7 +112,14 @@ function animateCounter(el, targetStr, duration = 1600) {
 
 function initCounters() {
   const statCards = document.querySelectorAll('.stat-card');
-  statCards.forEach(card => {
+  statCards.forEach((card, i) => {
+    // Card entrance — staggered slide up
+    gsap.from(card, {
+      opacity: 0, y: 28, duration: 0.65, ease: 'power2.out',
+      delay: i * 0.13,
+      scrollTrigger: { trigger: card, start: 'top 86%' },
+    });
+
     const numEl = card.querySelector('.stat-card__number');
     if (!numEl) return;
     const target = numEl.dataset.target;
@@ -179,15 +186,12 @@ function initDemo() {
 
 // ── SECTION 6: GOVERNANCE CARDS ──────────────────────────────────
 function initGovernance() {
-  const cards = document.querySelectorAll('.pillar-card');
-  cards.forEach((card, i) => {
-    gsap.from(card, {
-      opacity: 0,
-      x: i % 2 === 0 ? -30 : 30,
-      duration: 0.8,
-      ease: 'power2.out',
-      scrollTrigger: { trigger: card, start: 'top 82%' },
-    });
+  // All 3 cards rise together with stagger — consistent with 3-column layout
+  gsap.from('.pillar-card', {
+    opacity: 0, y: 35,
+    duration: 0.75, ease: 'power2.out',
+    stagger: 0.14,
+    scrollTrigger: { trigger: '#section-gov', start: 'top 68%' },
   });
 }
 
@@ -233,14 +237,37 @@ function initDecision() {
 
 // ── SECTION 9: CLOSE ─────────────────────────────────────────────
 function initClose() {
-  // Pin the close section and fade in
-  gsap.from('#section-close .close-tagline', {
-    opacity: 0, y: 40, duration: 1.1, ease: 'power3.out',
-    scrollTrigger: { trigger: '#section-close', start: 'top 65%' },
-  });
-  gsap.from('#section-close .close-meta', {
-    opacity: 0, duration: 0.8, delay: 0.4,
-    scrollTrigger: { trigger: '#section-close', start: 'top 65%' },
+  const st = { trigger: '#section-close', start: 'top 62%' };
+  const tl = gsap.timeline({ scrollTrigger: st });
+
+  // Lines drop in one after the other — deliberate pace
+  tl.from('.close-line', {
+      opacity: 0, y: 32, duration: 1, stagger: 0.38, ease: 'power3.out',
+    })
+    // Bookend line grows from center — echoes the hero opening
+    .to('.close-accent', {
+      scaleX: 1, duration: 0.85, ease: 'power2.inOut',
+    }, '-=0.25')
+    // Meta fades in quietly
+    .from('.close-meta', {
+      opacity: 0, duration: 0.7, ease: 'power2.out',
+    }, '-=0.3');
+}
+
+// ── TEAMS LINK HANDLER ────────────────────────────────────────────
+function initTeamsLink() {
+  const link = document.getElementById('teams-link');
+  if (!link) return;
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const f = document.createElement('iframe');
+    f.style.display = 'none';
+    document.body.appendChild(f);
+    f.src = 'msteams://';
+    setTimeout(() => {
+      document.body.removeChild(f);
+      window.open('https://teams.microsoft.com', '_blank');
+    }, 1500);
   });
 }
 
@@ -255,4 +282,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initExperiment();
   initDecision();
   initClose();
+  initTeamsLink();
 });

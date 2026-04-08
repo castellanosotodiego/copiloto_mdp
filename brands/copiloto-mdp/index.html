@@ -149,40 +149,40 @@
           <span class="pillar-card__tag">Información vigente. Siempre.</span>
         </div>
       </div>
-      <div class="quote-block" style="margin-top:2.5rem;">
+      <div class="quote-block gov-quote">
         <p>"Es grave entregar una información errada."</p>
         <cite>— Paula, Canal RED Manager · Sesión de validación, Marzo 2026</cite>
       </div>
-      <p style="font-family:var(--font-serif);font-style:italic;font-size:0.95rem;color:var(--border);margin-top:1.2rem;">No es perfecto. Pero es gobernable, y eso es lo que permite mejorarlo con confianza.</p>
+      <p class="gov-disclaimer">No es perfecto. Pero es gobernable, y eso es lo que permite mejorarlo con confianza.</p>
     </div>
   </section>
 
   <section class="section section--dark" id="section-experiment">
     <div class="section__inner">
       <p class="eyebrow">La propuesta</p>
-      <h2 class="headline" style="margin-bottom:2.5rem;">Un piloto de bajo riesgo.<br>Alta evidencia. Decisión en 30 días.</h2>
+      <h2 class="headline experiment-headline">Un piloto de bajo riesgo.<br>Alta evidencia. Decisión en 30 días.</h2>
       <div class="experiment-grid">
         <div class="exp-card"><span class="exp-card__num" data-target="10">10</span><p class="exp-card__unit">ejecutivos</p><p class="exp-card__desc">Un grupo controlado del canal RED. No toda la organización — la escala correcta para generar evidencia real.</p></div>
         <div class="exp-card"><span class="exp-card__num" data-target="30">30</span><p class="exp-card__unit">días</p><p class="exp-card__desc">Tiempo suficiente para generar datos reales de uso. No tan largo que requiera una aprobación mayor.</p></div>
         <div class="exp-card"><span class="exp-card__num" data-target="0">0</span><p class="exp-card__unit">riesgo técnico</p><p class="exp-card__desc">El bot ya está construido y validado. El costo de activar el piloto es casi cero.</p></div>
       </div>
-      <div class="quote-block" style="margin-top:2rem;">
+      <div class="quote-block experiment-quote">
         <p>"Si en 30 días no mueve ninguna aguja, lo apagamos. ¿Qué pierdes?"</p>
       </div>
     </div>
   </section>
 
-  <section id="section-decision" style="min-height:100vh;display:flex;">
-    <div class="decision-split" style="width:100%;">
+  <section id="section-decision">
+    <div class="decision-split">
       <div class="decision-left">
-        <p class="eyebrow" style="margin-bottom:1.5rem;">La decisión</p>
+        <p class="eyebrow decision-eyebrow">La decisión</p>
         <h2 class="decision-left__headline">La decisión<br>es tuya.</h2>
         <p class="decision-left__sub">El piloto está listo.<br>El bot funciona.<br>La evidencia existe.</p>
       </div>
       <div class="decision-right">
         <p class="decision-right__label">Lo que necesitamos de ti</p>
         <p class="decision-right__ask">Autorización para correr el piloto con 10 ejecutivos del canal RED durante 30 días.</p>
-        <p style="font-family:var(--font-sans);font-size:0.82rem;font-weight:700;color:rgba(26,22,18,0.65);margin-bottom:1rem;text-transform:uppercase;letter-spacing:0.1em;">Si en 30 días se cumple esto:</p>
+        <p class="decision-conditions-label">Si en 30 días se cumple esto:</p>
         <div class="criteria-list">
           <div class="criteria-item"><span class="criteria-item__check">✓</span><p class="criteria-item__text">Los ejecutivos lo usan sin necesitar soporte.</p></div>
           <div class="criteria-item"><span class="criteria-item__check">✓</span><p class="criteria-item__text">Las respuestas son consistentes con la información oficial del canal.</p></div>
@@ -193,26 +193,19 @@
     </div>
   </section>
 
-  <section class="section section--dark" id="section-close" style="min-height:60vh;">
-    <div class="section__inner" style="text-align:center;">
-      <p class="close-tagline">El conocimiento ya existe.<br><em>Ahora está donde se necesita.</em></p>
-      <div class="deco-line" style="margin:2rem auto;width:60px;"></div>
+  <section class="section section--dark" id="section-close">
+    <div class="section__inner close-inner">
+      <p class="close-tagline">
+        <span class="close-line">El conocimiento ya existe.</span>
+        <span class="close-line"><em>Ahora está donde se necesita.</em></span>
+      </p>
+      <div class="close-accent"></div>
       <p class="close-meta">Copiloto SMART+ &nbsp;·&nbsp; MDP &nbsp;·&nbsp; Banco Santander Chile</p>
     </div>
   </section>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script>
-    var tl = document.getElementById('teams-link');
-    if(tl) tl.addEventListener('click', function(e){
-      e.preventDefault();
-      var f = document.createElement('iframe');
-      f.style.display='none'; document.body.appendChild(f);
-      f.src='msteams://';
-      setTimeout(function(){ document.body.removeChild(f); window.open('https://teams.microsoft.com','_blank'); }, 1500);
-    });
-  </script>
   <script src="js/main.js"></script>
 </body>
 </html>

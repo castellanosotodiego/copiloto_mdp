@@ -12,10 +12,20 @@ window.addEventListener('scroll', () => {
 function initHero() {
   const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
   tl.to('.hero__logo', { opacity: 1, y: 0, duration: 1.1, delay: 0.3 })
-    .to('.hero__line', { width: '100px', duration: 0.7, ease: 'power2.inOut' }, '-=0.3')
+    .to('.hero__line', { width: '120px', duration: 0.7, ease: 'power2.inOut' }, '-=0.3')
     .to('.hero__tagline', { opacity: 1, y: 0, duration: 0.8 }, '-=0.3')
     .to('.hero__meta', { opacity: 1, duration: 0.6 }, '-=0.3')
     .to('.scroll-hint', { opacity: 0.5, duration: 0.5 }, '-=0.2');
+
+  // Fade out scroll hint on first scroll
+  const scrollHint = document.querySelector('.scroll-hint');
+  if (scrollHint) {
+    const hideHint = () => {
+      gsap.to(scrollHint, { opacity: 0, duration: 0.4, onComplete: () => scrollHint.remove() });
+      window.removeEventListener('scroll', hideHint);
+    };
+    window.addEventListener('scroll', hideHint, { passive: true, once: true });
+  }
 }
 
 // ── SECTION 2: INSIGHT CARDS ──────────────────────────────────────
@@ -36,14 +46,16 @@ function initInsight() {
     });
   });
 
-  // Headline pins while cards scroll into view
-  ScrollTrigger.create({
-    trigger: '#section-insight',
-    start: 'top top',
-    end: 'bottom bottom',
-    pin: '.insight-left',
-    pinSpacing: false,
-  });
+  // Headline pins while cards scroll into view — only on desktop
+  if (window.innerWidth > 900) {
+    ScrollTrigger.create({
+      trigger: '#section-insight',
+      start: 'top top',
+      end: 'bottom bottom',
+      pin: '.insight-left',
+      pinSpacing: false,
+    });
+  }
 }
 
 // ── SECTION 3: ANIMATED COUNTERS ─────────────────────────────────

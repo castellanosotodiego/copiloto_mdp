@@ -7,6 +7,39 @@
   --green:  #4A7C59;
 }
 
+/* Scroll hint starts hidden — GSAP animates it in */
+.scroll-hint { opacity: 0; }
+
+/* Section-level overrides */
+.section--insight {
+  align-items: flex-start;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+/* ── PILLAR GRID: 3 columns for this brand ──────────────────────── */
+.pillar-grid--three {
+  grid-template-columns: repeat(3, 1fr);
+  align-items: stretch;
+}
+
+/* Pillar card stretches to fill height with tag pushed to bottom */
+.pillar-card {
+  display: flex;
+  flex-direction: column;
+}
+.pillar-card .pillar-card__tag {
+  margin-top: auto;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+/* Stat card: 100% value needs slightly smaller font to fit gracefully */
+.stat-card__number--pct {
+  font-size: clamp(2.2rem, 4vw, 3.8rem);
+}
+
 /* Hero specific */
 .hero {
   background: var(--bg-cream);
@@ -34,18 +67,19 @@
 
 .hero__line {
   width: 0;
-  height: 1.5px;
+  height: 3px;
   background: var(--terra);
-  margin: 2.2rem auto;
+  margin: 2.4rem auto;
   transition: none;
+  box-shadow: 0 0 12px rgba(192, 85, 46, 0.4);
 }
 
 .hero__tagline {
   font-family: var(--font-serif);
-  font-size: clamp(1.1rem, 2.2vw, 1.6rem);
+  font-size: clamp(1.4rem, 2.8vw, 2.2rem);
   font-weight: 400;
   color: var(--bg-dark);
-  letter-spacing: 0.01em;
+  letter-spacing: 0.02em;
   opacity: 0;
   transform: translateY(8px);
   white-space: nowrap;
@@ -181,4 +215,6 @@
   .demo-layout { grid-template-columns: 1fr; }
   .question-layout { grid-template-columns: 1fr; }
   .question-vertical { display: none; }
+  .pillar-grid--three { grid-template-columns: 1fr; }
+  .section--insight { align-items: center; padding-top: var(--section-pad); padding-bottom: var(--section-pad); }
 }
